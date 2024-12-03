@@ -22,7 +22,6 @@
       margin-top: 30px;
       font-size: 4em;
       color: #ff69b4;
-      text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 30px #ff1493;
       font-family: 'Impact', sans-serif;
       text-transform: uppercase;
     }
@@ -39,6 +38,7 @@
 
     .falling-image {
       position: absolute;
+      top: 0; /* Start from the top of the page */
       width: 100px;
       animation: fall linear infinite;
       pointer-events: none;
@@ -58,7 +58,7 @@
 
     @keyframes fall {
       0% {
-        transform: translateY(-150px);
+        transform: translateY(-100px);
         opacity: 1;
       }
       100% {
@@ -96,6 +96,7 @@
       img.className = "falling-image";
       img.style.left = Math.random() * 100 + "vw";
       img.style.animationDuration = Math.random() * 3 + 2 + "s";
+      img.style.top = "-150px"; // Ensure images start above the visible page
       document.body.appendChild(img);
 
       setTimeout(() => {
