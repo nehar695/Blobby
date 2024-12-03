@@ -10,7 +10,7 @@
       padding: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       overflow: hidden;
-      background-image: url('https://i.ibb.co/WxpNqKL/candyland.jpg');
+      background-image: url('https://i.ibb.co/QjjCKZz/backround-Photoroom.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -22,11 +22,9 @@
       margin-top: 30px;
       font-size: 4em;
       color: #ff69b4;
-      text-shadow: 2px 2px 4px #ff1493, -2px -2px 4px #ff1493;
-      background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Pacifico', cursive;
+      text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 30px #ff1493;
+      font-family: 'Impact', sans-serif;
+      text-transform: uppercase;
     }
 
     p {
@@ -44,6 +42,7 @@
       width: 100px;
       animation: fall linear infinite;
       pointer-events: none;
+      z-index: 10;
     }
 
     .video-container {
@@ -59,7 +58,7 @@
 
     @keyframes fall {
       0% {
-        transform: translateY(-100px);
+        transform: translateY(-150px);
         opacity: 1;
       }
       100% {
