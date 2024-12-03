@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blobby Memecoin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3em;
+      color: #ffde59;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .blobby-main {
+      margin: 20px auto;
+      width: 200px;
+    }
+
+    .falling-image {
+      position: absolute;
+      width: 100px;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Meet Mr. Blobby</h1>
+  <p>Official CA:</p>
+  <img src="https://i.ibb.co/LNnCVF3/4983.webp" alt="Mr. Blobby" class="blobby-main">
+
+  <script>
+    const images = [
+      "https://i.ibb.co/kx3XRNp/blobby-no-backround-Photoroom.png",
+      "https://i.ibb.co/9nxGbbK/Mr-Blobby-no-backround-2-Photoroom.png",
+      "https://i.ibb.co/nr6DnKD/blobby-no-backround-3-Photoroom.png"
+    ];
+
+    const createFallingImage = () => {
+      const img = document.createElement("img");
+      img.src = images[Math.floor(Math.random() * images.length)];
+      img.className = "falling-image";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(img);
+
+      setTimeout(() => {
+        img.remove();
+      }, 5000); // Remove image after 5 seconds
+    };
+
+    setInterval(createFallingImage, 500);
+  </script>
+</body>
+</html>
